@@ -1,10 +1,20 @@
 import SwiftUI
+import ComposeApp
 
 @main
 struct iOSApp: App {
+
+    init() {
+        MainViewControllerKt.doInitKoin()
+    }
+
+    @UIApplicationDelegateAdaptor(AppDelegate.self)
+    var appDelegate: AppDelegate
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ComposeView(rootComponent: appDelegate.root)
+                .ignoresSafeArea(.keyboard) // Compose has own keyboard handler
         }
     }
 }
