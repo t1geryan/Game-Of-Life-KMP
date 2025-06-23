@@ -33,6 +33,17 @@ class Board(
         return Board(width, height, newAliveCells, checkBecomeAlive, checkStayAlive)
     }
 
+    override fun toString(): String = buildString {
+        for (row in 0..width) {
+            for (column in 0..height) {
+                val isAlive = getCellAlive(Cell(row, column))
+                append(if (isAlive) '*' else 'o')
+            }
+            append('\n')
+        }
+        append('\n')
+    }
+
     companion object {
         private const val DEFAULT_NEIGHBORS_TO_BECOME_ALIVE = 3
         private const val DEFAULT_MAX_NEIGHBORS_TO_STAY_ALIVE = 3
