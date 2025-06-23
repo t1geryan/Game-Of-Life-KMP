@@ -10,20 +10,20 @@ import com.arkivanov.decompose.extensions.compose.subscribeAsState
 import com.arkivanov.decompose.router.stack.ChildStack
 
 @Composable
-internal fun RootPage(
+internal fun RootPane(
     component: RootComponent,
     modifier: Modifier = Modifier,
 ) {
     val childStack by component.childStack.subscribeAsState()
 
-    RootPage(
+    RootPane(
         childStack = childStack,
         modifier = modifier,
     )
 }
 
 @Composable
-private fun RootPage(
+private fun RootPane(
     childStack: ChildStack<*, RootComponent.Child>,
     modifier: Modifier = Modifier,
 ) {

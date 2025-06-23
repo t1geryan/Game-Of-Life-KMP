@@ -6,7 +6,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.tigeryan.gameoflife.presentation.features.root.RootComponent
-import com.tigeryan.gameoflife.presentation.features.root.RootPage
+import com.tigeryan.gameoflife.presentation.features.root.RootPane
 import com.tigeryan.gameoflife.presentation.theme.AppTheme
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
@@ -19,7 +19,7 @@ internal fun App(rootComponent: RootComponent) {
             color = MaterialTheme.colorScheme.background,
             modifier = Modifier.fillMaxSize(),
         ) {
-            RootPage(component = rootComponent, modifier = Modifier.fillMaxSize())
+            RootPane(component = rootComponent, modifier = Modifier.fillMaxSize())
         }
     }
 }
